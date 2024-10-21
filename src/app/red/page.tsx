@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { Metadata } from "next";
-import RedLots from "@/data/ParkingLots";
+import { RedLots } from "@/data/ParkingLots";
 import Button from "@/components/red-lots/Button";
 
 export const metadata: Metadata = {

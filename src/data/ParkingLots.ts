@@ -41,7 +41,264 @@ const templateStall: Stall = {
   missingCount: 0,
 };
 
-const RedLots: Record<string, LotProperties> = {
+export const BlueLots: Record<string, LotProperties> = {
+  APS: {
+    name: "APS",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 1586 },
+      { ...templateStall, name: StallNames.P, maxCount: 170 },
+      { ...templateStall, maxCount: 189 },
+      { ...templateStall, name: StallNames.MX, maxCount: 12 },
+      { ...templateStall, name: StallNames.Service, maxCount: 3 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 28 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 6 },
+      { ...templateStall, name: StallNames.Electric, maxCount: 30 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 7 },
+    ],
+  },
+  "Lot 1C": {
+    name: "Lot 1C",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 96 },
+      { ...templateStall, name: StallNames.ResidentStalls, maxCount: 15 },
+      { ...templateStall, maxCount: 15 },
+      { ...templateStall, name: StallNames.Service, maxCount: 2 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 6 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 1 },
+      { ...templateStall, name: StallNames.Electric, maxCount: 2 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 65 },
+    ],
+  },
+  "Lot 17A": {
+    name: "Lot 17A",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, maxCount: 106 },
+      { ...templateStall, name: StallNames.X, maxCount: 2 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 2 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 3 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 5 },
+    ],
+  },
+  ARC: {
+    name: "ARC",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 68 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 8 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 1 },
+    ],
+  },
+  ECPS: {
+    name: "ECPS",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 304 },
+      { ...templateStall, maxCount: 30 },
+      { ...templateStall, name: StallNames.X, maxCount: 3 },
+      { ...templateStall, name: StallNames.Service, maxCount: 2 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 15 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 5 },
+      { ...templateStall, name: StallNames.Electric, maxCount: 19 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 4 },
+    ],
+  },
+  AV2: {
+    name: "AV2",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.ResidentStalls, maxCount: 340 },
+      { ...templateStall, name: StallNames.MX, maxCount: 6 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 6 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 16 },
+    ],
+  },
+  AV3: {
+    name: "AV3",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.ResidentStalls, maxCount: 102 },
+      { ...templateStall, name: StallNames.MX, maxCount: 2 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 8 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 1 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 7 },
+    ],
+  },
+  VPS: {
+    name: "VPS",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.ResidentStalls, maxCount: 260 },
+    ],
+  },
+};
+
+export const OrangeLots: Record<string, LotProperties> = {
+  SCPS: {
+    name: "SCPS",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 542 },
+      { ...templateStall, name: StallNames.P, maxCount: 80 },
+      { ...templateStall, maxCount: 266 },
+      { ...templateStall, name: StallNames.MX, maxCount: 12 },
+      { ...templateStall, name: StallNames.PbS, maxCount: 21 },
+      { ...templateStall, name: StallNames.Service, maxCount: 10 },
+      { ...templateStall, name: StallNames.E, maxCount: 2 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 16 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 4 },
+      { ...templateStall, name: StallNames.Electric, maxCount: 9 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 8 },
+    ],
+  },
+  "Lot 5": {
+    name: "Lot 5",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 356 },
+      { ...templateStall, name: StallNames.ResidentStalls, maxCount: 27 },
+      { ...templateStall, name: StallNames.Service, maxCount: 6 },
+      { ...templateStall, name: StallNames.E, maxCount: 3 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 8 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 2 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 10 },
+    ],
+  },
+  "Lot 14": {
+    name: "Lot 14",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 165 },
+      { ...templateStall, name: StallNames.Service, maxCount: 3 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 4 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 3 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 7 },
+    ],
+  },
+  "Lot 14A": {
+    name: "Lot 14A",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 162 },
+    ],
+  },
+  MPS: {
+    name: "MPS",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 1031 },
+      { ...templateStall, name: StallNames.P, maxCount: 78 },
+      { ...templateStall, maxCount: 117 },
+      { ...templateStall, name: StallNames.AR24, maxCount: 3 },
+      { ...templateStall, name: StallNames.MX, maxCount: 5 },
+      { ...templateStall, name: StallNames.PbS, maxCount: 16 },
+      { ...templateStall, name: StallNames.Service, maxCount: 5 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 16 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 9 },
+      { ...templateStall, name: StallNames.Electric, maxCount: 12 },
+    ],
+  },
+  "Lot 7": {
+    name: "Lot 7",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, maxCount: 155 },
+      { ...templateStall, name: StallNames.AR24, maxCount: 37 },
+      { ...templateStall, name: StallNames.MX, maxCount: 4 },
+      { ...templateStall, name: StallNames.Service, maxCount: 11 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 3 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 4 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 11 },
+    ],
+  },
+  "Lot 6": {
+    name: "Lot 6",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, maxCount: 126 },
+      { ...templateStall, name: StallNames.MX, maxCount: 7 },
+      { ...templateStall, name: StallNames.Service, maxCount: 4 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 5 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 1 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 8 },
+    ],
+  },
+  "Lot 2": {
+    name: "Lot 2",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, maxCount: 57 },
+      { ...templateStall, name: StallNames.X, maxCount: 9 },
+      { ...templateStall, name: StallNames.MX, maxCount: 8 },
+      { ...templateStall, name: StallNames.Service, maxCount: 3 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 4 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 1 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 3 },
+    ],
+  },
+  "Lot 1": {
+    name: "Lot 1",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.C, maxCount: 177 },
+      { ...templateStall, maxCount: 142 },
+      { ...templateStall, name: StallNames.Service, maxCount: 1 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 3 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 5 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 10 },
+    ],
+  },
+  SSPS: {
+    name: "SSPS",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, name: StallNames.GeneralStalls, maxCount: 1089 },
+      { ...templateStall, name: StallNames.P, maxCount: 327 },
+      { ...templateStall, maxCount: 294 },
+      { ...templateStall, name: StallNames.MX, maxCount: 2 },
+      { ...templateStall, name: StallNames.PbS, maxCount: 13 },
+      { ...templateStall, name: StallNames.Service, maxCount: 7 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 26 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 2 },
+      { ...templateStall, name: StallNames.Electric, maxCount: 42 },
+      { ...templateStall, name: StallNames.Specialty, maxCount: 11 },
+    ],
+  },
+  BP: {
+    name: "BP",
+    timeIn: "-1",
+    timeOut: "-1",
+    stalls: [
+      { ...templateStall, maxCount: 147 },
+      { ...templateStall, name: StallNames.X, maxCount: 2 },
+      { ...templateStall, name: StallNames.Service, maxCount: 5 },
+      { ...templateStall, name: StallNames.Handicap, maxCount: 6 },
+      { ...templateStall, name: StallNames.HandicapVan, maxCount: 2 },
+    ],
+  },
+};
+
+export const RedLots: Record<string, LotProperties> = {
   "Lot 80": {
     name: "Lot 80",
     timeIn: "-1",
@@ -222,5 +479,3 @@ const RedLots: Record<string, LotProperties> = {
     ],
   },
 };
-
-export default RedLots;

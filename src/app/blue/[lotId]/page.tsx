@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import LotUtility from "@/components/lots/LotUtility";
 import TimeBar from "@/components/lots/TimeBar";
-import { RedLots } from "@/data/ParkingLots";
+import { BlueLots } from "@/data/ParkingLots";
 import { Metadata } from "next";
 
 interface PageProps {
@@ -32,7 +32,7 @@ export async function generateMetadata({
 const page = ({ params }: PageProps) => {
   const lotId = formatLodId(decodeURIComponent(params.lotId));
 
-  const lotProperties = RedLots[lotId];
+  const lotProperties = BlueLots[lotId];
 
   return (
     <div className="h-screen flex flex-col">

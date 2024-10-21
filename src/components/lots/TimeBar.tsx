@@ -49,6 +49,7 @@ const TimeBar = ({ children, lot }: TimeBarProps) => {
           className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-[#00C76A] text-[0.75em] mr-1"
           type="button"
           onClick={() => {
+            if ("vibrate" in navigator) navigator.vibrate(100);
             setTimes({ ...times, timeIn: getTime() });
           }}
         >
@@ -64,6 +65,7 @@ const TimeBar = ({ children, lot }: TimeBarProps) => {
           className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-[#C70000] text-[0.75em] mr-1"
           type="button"
           onClick={() => {
+            if ("vibrate" in navigator) navigator.vibrate(100);
             setTimes({ ...times, timeOut: getTime() });
           }}
         >

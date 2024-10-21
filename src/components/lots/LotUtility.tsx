@@ -1,23 +1,45 @@
 "use client";
 
 import { Stall } from "@/data/ParkingLots";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 interface LotUtilityProps {
   children: string;
+  lot: string;
   stall: Stall;
 }
 
-const LotUtility = ({ children, stall }: LotUtilityProps) => {
+const LotUtility = ({ children, lot, stall }: LotUtilityProps) => {
   const [isAdding, setIsAdding] = useState(true);
   const [counter, setCounter] = useState(0);
 
-  let fontSize = "0.9em";
+  useEffect(() => {
+    // Load the saved counts
+    const savedCount = sessionStorage.getItem(`count_${lot}_${children}`);
+    if (savedCount) {
+      setCounter(JSON.parse(savedCount));
+    }
+  }, []);
 
-  if (children.length >= 15) fontSize = "0.8em";
-  if (children.length >= 20) fontSize = "0.7em";
-  if (children.length >= 25) fontSize = "0.6em";
+  // Save the counts
+  useEffect(() => {
+    sessionStorage.setItem(`count_${lot}_${children}`, JSON.stringify(counter));
+  }, [counter]);
+
+  // Calculate the font size based on the name length
+  const getFontSize = () => {
+    switch (true) {
+      case children.length >= 25:
+        return "0.6em";
+      case children.length >= 20:
+        return "0.7em";
+      case children.length >= 15:
+        return "0.8em";
+      default:
+        return "0.9em";
+    }
+  };
 
   return (
     <div className="font-vietnamese">
@@ -26,6 +48,7 @@ const LotUtility = ({ children, stall }: LotUtilityProps) => {
           color={isAdding ? "#00C76A" : ""}
           size={23}
           onClick={() => {
+            if ("vibrate" in navigator) navigator.vibrate(100);
             if (counter === 0) setIsAdding(true);
           }}
         />
@@ -33,6 +56,7 @@ const LotUtility = ({ children, stall }: LotUtilityProps) => {
           color={!isAdding ? "#C70000" : ""}
           size={23}
           onClick={() => {
+            if ("vibrate" in navigator) navigator.vibrate(100);
             if (counter === 0) setIsAdding(false);
           }}
         />
@@ -40,11 +64,13 @@ const LotUtility = ({ children, stall }: LotUtilityProps) => {
       <div className="flex justify-between w-[145px] h-[55px] text-black">
         <button
           type="button"
-          className={`w-[55px] h-[55px] bg-[#E5E0DD] text-center text-[${fontSize}]`}
+          className={`w-[55px] h-[55px] bg-[#E5E0DD] text-center`}
           onClick={() => {
+            if ("vibrate" in navigator) navigator.vibrate(100);
             if (isAdding) setCounter(counter + 1);
             else setCounter(counter - 1);
           }}
+          style={{ fontSize: getFontSize() }}
         >
           {children}
         </button>
@@ -65,7 +91,10 @@ const LotUtility = ({ children, stall }: LotUtilityProps) => {
       <button
         type="button"
         className="w-[55px] h-[12px] bg-red-500 mt-1 text-[0.65em] text-black"
-        onClick={() => setCounter(0)}
+        onClick={() => {
+          if ("vibrate" in navigator) navigator.vibrate(100);
+          setCounter(0);
+        }}
       >
         <span>Clear</span>
       </button>
