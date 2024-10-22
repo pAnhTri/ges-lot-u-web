@@ -408,7 +408,7 @@ export const RedLots: Record<string, LotProperties> = {
     stalls: [
       { ...templateStall, name: StallNames.C, maxCount: 233 },
       { ...templateStall, maxCount: 347 },
-      { ...templateStall, name: StallNames.PbS, maxCount: 5 },
+      { ...templateStall, name: StallNames.PbS, maxCount: 18 },
       { ...templateStall, name: StallNames.Service, maxCount: 1 },
       { ...templateStall, name: StallNames.E, maxCount: 6 },
       { ...templateStall, name: StallNames.Handicap, maxCount: 4 },
