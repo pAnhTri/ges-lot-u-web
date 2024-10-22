@@ -25,7 +25,7 @@ const LotUtility = ({ children, lot, stall }: LotUtilityProps) => {
       `count_${lot}_${children}_isAdding`
     );
     if (savedIsAdding) {
-      setCounter(JSON.parse(savedIsAdding));
+      setIsAdding(JSON.parse(savedIsAdding));
     }
   }, []);
 
