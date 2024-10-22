@@ -20,12 +20,26 @@ const LotUtility = ({ children, lot, stall }: LotUtilityProps) => {
     if (savedCount) {
       setCounter(JSON.parse(savedCount));
     }
+
+    const savedIsAdding = sessionStorage.getItem(
+      `count_${lot}_${children}_isAdding`
+    );
+    if (savedIsAdding) {
+      setCounter(JSON.parse(savedIsAdding));
+    }
   }, []);
 
   // Save the counts
   useEffect(() => {
     sessionStorage.setItem(`count_${lot}_${children}`, JSON.stringify(counter));
   }, [counter]);
+
+  useEffect(() => {
+    sessionStorage.setItem(
+      `count_${lot}_${children}_isAdding`,
+      JSON.stringify(isAdding)
+    );
+  }, [isAdding]);
 
   // Calculate the font size based on the name length
   const getFontSize = () => {
